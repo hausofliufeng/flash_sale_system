@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    {include file="./public/head_top" /}
+
+<!-- 中部开始 -->
+<div class="wrapper">
+    <!-- 左侧菜单开始 -->
+    {include file="./public/menu" /}
+    <!-- 左侧菜单结束 -->
+    <!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+<!--            <blockquote class="layui-elem-quote">-->
+<!--                欢迎使用x-admin 后台模版！<span class="f-14">v1.0</span>官方交流群： 519492808-->
+<!--            </blockquote>-->
+            <p>欢迎来到秒杀系统后台，
+            <?php
+
+            $username=Session::get('username');
+            echo $username.'!';
+            echo '<br>';
+            ?>
+            </p>
+            
+            <!-- 右侧内容框架，更改从这里结束 -->
+        </div>
+    </div>
+    <!-- 右侧主体结束 -->
+</div>
+<!-- 中部结束 -->
+<!-- 底部开始 -->
+<div class="footer">
+    <div class="copyright" align="center">Copyright ©2020</div>
+</div>
+<!-- 底部结束 -->
+</body>
+</html>

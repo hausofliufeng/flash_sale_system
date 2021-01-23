@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+{include file="./public/head_top" /}
+
+<!-- 中部开始 -->
+<div class="wrapper">
+    <!-- 左侧菜单开始 -->
+    {include file="./public/menu" /}
+    <!-- 左侧菜单结束 -->
+    <!-- 右侧主体开始 -->
+    <div class="page-content">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+            <form class="layui-form xbs" action="{:url('@index/makeitem/doSubmit')}" method="post" name="myForm">
+                <div class="layui-form-pane" style="text-align: center;">
+                    <div class="layui-form-item" style="display: inline-block;">
+                        <div class="layui-input-inline" style="clear: both">
+                            <span>商品名称</span>
+                            <input type="text" name="name" autocomplete="off" class="layui-input">
+                            <span>商品价格</span>
+                            <input type="text" name="price" autocomplete="off" class="layui-input">
+                            <span>商品库存</span>
+                            <input type="text" name="stock_origin" autocomplete="off" class="layui-input">
+                            <span>开始时间</span>
+                            <input type="datetime-local" name="time_start"class="layui-input"/>
+                            <span>秒杀持续时间</span>
+                            <input type="text" name="period"  placeholder="单位小时" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline" style="clear: both">
+                            <button class="layui-btn"  lay-submit="" lay-filter="" type="submit">上架</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- 右侧内容框架，更改从这里结束 -->
+        </div>
+    </div>
+    <!-- 右侧主体结束 -->
+</div>
+<!-- 中部结束 -->
+<!-- 底部开始 -->
+<div class="footer">
+    <div class="copyright" align="center">Copyright ©2020</div>
+</div>
+<!-- 底部结束 -->
+</body>
+</html>

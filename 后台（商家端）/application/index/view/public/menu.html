@@ -1,0 +1,111 @@
+<?php
+use think\Session;
+use think\Controller;
+
+$seller='<div class="left-nav">
+<div id="side-nav">
+    <ul id="nav">
+        <li class="list" current>
+            <a href="./index/index">
+                <i class="iconfont">&#xe761;</i>
+                欢迎页面
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+        </li>
+        <li class="list">
+            <a href="javascript:;">
+                <i class="iconfont">&#xe70b;</i>
+                用户组功能
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/index/makeitem">
+                        <i class="iconfont">&#xe6a7;</i>
+                        上架商品
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="list" >
+            <a href="javascript:;">
+                <i class="iconfont">&#xe6a3;</i>
+                系统功能
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/index/Passchange">
+                        <i class="iconfont">&#xe6a7;</i>
+                        修改密码
+                    </a>
+                </li>
+                <li>
+                    <a href="/index/logout">
+                        <i class="iconfont">&#xe6a7;</i>
+                        退出
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>';
+
+$admin='<div class="left-nav">
+<div id="side-nav">
+    <ul id="nav">
+        <li class="list" current>
+            <a href="./index/index">
+                <i class="iconfont">&#xe761;</i>
+                欢迎页面
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+        </li>
+        <li class="list">
+            <a href="javascript:;">
+                <i class="iconfont">&#xe70b;</i>
+                用户组功能
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/index/log">
+                        <i class="iconfont">&#xe6a7;</i>
+                        系统日志
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="list" >
+            <a href="javascript:;">
+                <i class="iconfont">&#xe6a3;</i>
+                系统功能
+                <i class="iconfont nav_right">&#xe697;</i>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="/index/Passchange">
+                        <i class="iconfont">&#xe6a7;</i>
+                        修改密码
+                    </a>
+                </li>
+                <li>
+                    <a href="/index/logout">
+                        <i class="iconfont">&#xe6a7;</i>
+                        退出
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>';
+
+$user_role=Session::get('user_role');
+if($user_role==0){
+    echo $seller;
+}else{
+    echo $admin;
+}
+?>

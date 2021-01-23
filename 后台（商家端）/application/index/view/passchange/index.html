@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+{include file="./public/head_top" /}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- 中部开始 -->
+<div class="wrapper">
+    <!-- 左侧菜单开始 -->
+    {include file="./public/menu" /}
+    <!-- 左侧菜单结束 -->
+    <!-- 右侧主体开始 -->
+    <div class="page-content" id="new">
+        <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 {:url('@index/passchange/doChange')}-->
+            <!--<form class="layui-form xbs" method="post" name="myForm">-->
+                <div class="layui-form-pane" style="text-align: center;">
+                    <div class="layui-form-item" style="display: inline-block;">
+                        <div class="layui-input-inline">
+                            <input type="password" name="password_old"  placeholder="请输入旧密码" autocomplete="off" class="layui-input" v-model="pass_old">
+                        </div><br><br><br>
+                        <div class="layui-input-inline">
+                            <input type="password" name="password_new"  placeholder="请输入新密码" autocomplete="off" class="layui-input" v-model="pass">
+                        </div><br>
+                        <div class="layui-input-inline">
+                            <input type="password" name="password_new_confirm"  placeholder="请再次输入新密码" autocomplete="off" class="layui-input" v-model="pass_con">
+                        </div>
+
+                        <div class="layui-input-inline" style="width:80px">
+                            <input class="layui-btn"  type="submit" lay-submit="" lay-filter="sreach" @click="checkPass" value="提交">
+                        </div>
+                    </div>
+                </div>
+            <!--</form>-->
+
+            <!-- 右侧内容框架，更改从这里结束 -->
+        </div>
+    </div>
+    <!-- 右侧主体结束 -->
+</div>
+<!-- 中部结束 -->
+<!-- 底部开始 -->
+<div class="footer">
+    <div class="copyright" align="center">Copyright ©2020</div>
+</div>
+<script>
+    var app=new Vue({
+        el:"#new",
+        data:{
+            pass_old:'',
+            pass:'',
+            pass_con:''
+        },
+        methods:{
+            checkPass(){
+                if(this.pass_old=='' || this.pass==''){
+                    alert("密码不能为空！");
+                }else if(this.pass_new==''){
+                    alert("密码不能为空！");
+                }else if(this.pass!=this.pass_con){
+                    alert('两次密码输入不一致！');
+                }else{
+                    url="http://admin.appple.top/index/Passchange/dochange?pass_old="+this.pass_old+"&pass="+this.pass;
+            axios.get(url).then(
+            function(response){
+                alert(response.data);
+            },
+            function(err){}
+        );
+                }
+            }
+        }
+    })
+</script>
+<!-- 底部结束 -->
+</body>
+</html>

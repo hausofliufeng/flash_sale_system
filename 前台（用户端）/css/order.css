@@ -1,0 +1,55 @@
+/*全局样式*/
+*{margin:0;padding:0}
+li{list-style: none}
+img{vertical-align: top;border: none}
+legend{display:none}
+fieldset{border: none}
+a{text-decoration: none}
+a:hover,a:active{text-decoration: none}
+.clear{clear:both;}
+
+.container{
+    width: 1024px;
+    /* box-shadow: 0 0 15px #999999; */
+    margin: 0 auto;
+    overflow-x: hidden;
+    position: relative;
+    /* background:  #000000; */
+}
+.banner{
+    /* width: 500px; */
+    height: 40px;
+    /*border: 1px solid black;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome{
+    position: absolute;
+    top: 7px;
+    left:10px;
+    text-align: left;
+    height: 25px;
+    width: 300px;
+    font-size: 15px;
+    /*color: #fff;*/
+    /*border: 1px solid black;*/
+}
+
+.order_box{
+    /* width: 500px; */
+    /*height: 170px;*/
+    /*border: 1px solid black;*/
+}
+
+.logout_box{
+    position: absolute;
+    top: 7px;
+    right:10px;
+    text-align: center;
+    height: 25px;
+    width: 70px;
+    font-size: 15px;
+    /*color: #fff;*/
+    /*border: 1px solid black;*/
+}
